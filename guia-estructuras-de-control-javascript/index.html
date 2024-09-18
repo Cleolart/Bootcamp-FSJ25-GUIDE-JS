@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía estructuras de control con JavaScript</title>
+    <!--This is boostrap!-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <style>
+           h6{
+                color:rgb(184, 0, 0);
+            }
+            #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 99;
+            }
+            .section {
+                display: none;
+            }
+            .active {
+                display: block;
+            }
+        </style>
+</head>
+
+<body class="container py-5">
+    <section class="">
+        <h1>Guía estructuras de control con JavaScript</h1>
+        <p>Claudia Lara FSJ25</p>
+    </section>
+    <!--EJERCICIO 1-->
+    <section class="card p-3 mt-3">
+        <h6>EJERCICIO 1</h6>
+        <p>Crear una función que en base a la edad que ingreso el usuario devolver un mensaje si la persona es mayor de
+            edad o no. Utilizar para la condición el operador ternario.</p>
+        <h2>Verifica si eres mayor de edad</h2>
+        <label>Ingresa tu edad:</label>
+        <input type="number" id="age" min="0" class="form-control my-3 w-50">
+        <button class="btn btn-primary w-50" onclick="viewAge()">Verificar</button>
+    </section>
+
+    <!--EJERCICIO 2-->
+    <section class="card p-3 mt-5">
+        <h6>EJERCICIO 2</h6>
+        <p>Crear una función que determine la nota final de un alumno, la cual depende de lo siguiente:</p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">PORCENTAJE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Examen</th>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tareas</th>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Asistencia</th>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Investigación</th>
+                    <td>30%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="pb-2">Al final deberá mostrar los datos del alumno, nombre, carnet y nota final.</p>
+
+        <h2>Ingreso de datos de alumno</h2>
+        <label">nombre</label>
+            <input type="text" id="name2" class="form-control my-3 w-50">
+
+            <label>carnet</label>
+            <input type="text" id="credential2" min="0" class="form-control my-3 w-50">
+
+            <label>Nota examen</label>
+            <input type="number" id="exam2" min="1" max="10" class="form-control my-3 w-50">
+
+            <label>Nota tareas</label>
+            <input type="number" id="homeWork2" min="1" max="10" class="form-control my-3 w-50">
+
+            <label>Nota asistencia</label>
+            <input type="number" id="attendance2" min="1" max="10" class="form-control my-3 w-50">
+
+            <label>Nota Investigación</label>
+            <input type="number" id="research2" min="1" max="10" class="form-control my-3 w-50">
+
+            <button class="btn btn-primary w-50" onclick="calcFinalNote()">Nota final</button>
+
+            <div id="result2"></div>
+    </section>
+
+    <!--EJERCICIO 3-->
+    <section class="card p-3 mt-5">
+        <h6>EJERCICIO 3</h6>
+        <p>Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento. Para este ejercicio
+            deberá de asignar las siguientes variables: nombre, salario, categoría y aumento. Deberá demostrar los datos
+            del empleado y el aumento salarial.</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">CATEGORÍA</th>
+                    <th scope="col">AUMENTO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">A</th>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <th scope="row">B</th>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <th scope="row">C</th>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <th scope="row">D</th>
+                    <td>20%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Ingreso de datos de trabajador</h2>
+        <label">Nombre</label>
+            <input type="text" id="name3" class="form-control my-3 w-50">
+
+            <label>Salario</label>
+            <input type="number" id="salary3" class="form-control my-3 w-50">
+
+            <select class="form-select my-3 w-50" id="increase3">
+                <option selected value="">Categoría</option>
+                <option value="increase3A">A</option>
+                <option value="increase3B">B</option>
+                <option value="increase3C">C</option>
+                <option value="increase3D">D</option>
+            </select>
+
+            <button class="btn btn-primary w-50" onclick="salaryCal()">Calcular aumento</button>
+
+            <div id="result3"></div>
+    </section>
+
+    <!--EJERCICIO 4-->
+    <section class="card p-3 mt-5">
+        <h6>EJERCICIO 4</h6>
+        <p>Crear una función que en base a 2 números enteros que ingrese el usuario, calcular cual número es el mayor y devolverlo</p>
+
+        <h2>Calcular número entero mayor</h2>
+
+            <label>Primer número</label>
+            <input type="number" id="numberEntero4_1" class="form-control my-3 w-50" step="1">
+
+            <label>Segundo número</label>
+            <input type="number" id="numberEntero4_2" class="form-control my-3 w-50" step="1">
+
+
+            <button class="btn btn-primary w-50" onclick="calNumEnt()">Calcular número</button>
+
+            <div id="result4"></div>
+    </section>
+
+        <!--EJERCICIO 5-->
+        <section class="card p-3 mt-5">
+            <h6>EJERCICIO 5</h6>
+            <p>Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el coche a la venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE el descuento será del 20%. Mostrar en html el coche seleccionado y el descuento que se aplicara en base a lo que selecciono el usuario</p>
+    
+            <h2>Selecciona el vehículo para conocer el descuento</h2>
+    
+            <label>Selecciona un coche:</label>
+            <select id="carSelect5" class="form-select my-3 w-50" onchange="calOff5()">
+                <option value="">--Vehículo--</option>
+                <option value="fordFiesta5">FORD FIESTA</option>
+                <option value="fordFocus5">FORD FOCUS</option>
+                <option value="fordScape5">FORD ESCAPE</option>
+            </select>
+    
+                <div id="result5"></div>
+                <div id="imagenCarro5"></div>
+        </section>
+
+        <!--EJERCICIO 6-->
+        <section class="card p-3 mt-5">
+        <h6>EJERCICIO 6</h6>
+        <p>Crear una Función para calcular el descuento en viajes turísticos tomando en cuenta lo siguiente:<br>
+        Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el descuento será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino es Puerto el Triunfo el descuento será del 15%.</p>
+
+        <h2>Conoce el descuento de tu destino</h2>
+
+        <label>Selecciona tu origen:</label>
+        <select id="origenSelect6" class="form-select my-3 w-50">
+            <option value="">--Origen--</option>
+            <option value="laPalma6">La Palma</option>
+            <option value="sanSalvador6">San Salvador</option>
+            <option value="santaTecla6">Santa Tecla</option>
+        </select>
+
+
+        <label>Selecciona tu destino:</label>
+        <select id="travelSelect6" class="form-select my-3 w-50">
+            <option value="">--Destino--</option>
+            <option value="costaSol6">La Costa del Sol</option>
+            <option value="panchimalco6">Panchimalco</option>
+            <option value="puertoTriunfo6">Puerto el triunfo</option>
+        </select>
+        <button class="btn btn-primary w-50" onclick="travelOff6()">Calcular descuento</button>
+            <div id="result6"></div>
+    </section>
+
+    <!--EJERCICIO 7-->
+
+    <section class="card p-3 mt-5">
+        <h6>EJERCICIO 7</h6>
+        <p>Se realiza la carga de 10 valores enteros por teclado. Se desea conocer: • La cantidad de valores negativos ingresados. • La cantidad de valores positivos ingresados. • La cantidad de múltiplos de 15. • El valor acumulado de los números ingresados que son pares.</p>
+
+        <h2>Ingresa 10 números</h2>
+
+        <input type="number" class="form-control my-2 w-50"  id="num7_1">
+        <input type="number" class="form-control my-2 w-50" id="num7_2">
+        <input type="number" class="form-control my-2 w-50" id="num7_3">
+        <input type="number" class="form-control my-2 w-50" id="num7_4">
+        <input type="number" class="form-control my-2 w-50" id="num7_5">
+        <input type="number" class="form-control my-2 w-50" id="num7_6">
+        <input type="number" class="form-control my-2 w-50" id="num7_7">
+        <input type="number" class="form-control my-2 w-50" id="num7_8">
+        <input type="number" class="form-control my-2 w-50" id="num7_9">
+        <input type="number" class="form-control my-2 w-50" id="num7_10">
+        <br>
+
+        <button class="btn btn-primary w-50" onclick="calcNumbers7()"">Calcular números</button>
+            <div id="result7"></div>
+    </section>
+
+    <!--EJERCICIO 8-->
+
+        <section class="card p-3 mt-5">
+            <h6>EJERCICIO 8</h6>
+            <p>Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado por el usuario.</p>
+    
+            <h2>Ingresa un número de la tabla de multiplicar que quieres generar</h2>
+    
+            <input type="number" class="form-control my-2 w-50"  id="table8">
+            <br>
+    
+            <button class="btn btn-primary w-50" onclick="mulTable8()"">Generar tabla</button>
+                <div id="result8">
+                    <table id="tableMult8" class="table"></table>
+                </div>
+        </section>
+
+        <!--EJERCICIO 9-->
+
+        <section class="card p-3 mt-5">
+            <h6>EJERCICIO 9</h6>
+            <p>Crear programa donde se introduce una temperatura en Celsius y salga el resultado en Fahrenheit, una vez teniendo la temperatura en Fahrenheit deberá devolver lo siguiente:<br>
+            <br> • Si ºF está entre 14 y 32, sale la frase “Temperatura baja”
+            <br> • Si ºF está entre 32 y 68, sale la frase “Temperatura adecuada”
+            <br> • Si ºF está entre 68 y 96, sale la frase “Temperatura alta”
+            <br> • Si no está entre ningún caso anterior la frase “Temperatura desconocida”</p>
+    
+            <h2>Ingresa temperatura en Celcius</h2>
+    
+            <input type="number" class="form-control my-2 w-50"  id="celcius9">
+            <br>
+    
+            <button class="btn btn-primary w-50" onclick="converter9()">Calcular temperatura</button>
+                <div id="result9"></div>
+        </section>
+
+
+        <!--EJERCICIO 10-->
+
+        <section class="card p-3 mt-5">
+            <h6>EJERCICIO 10</h6>
+            <p>Se cuenta con la siguiente información:
+                <br>• Las edades de 5 estudiantes del turno mañana.
+                <br>• Las edades de 6 estudiantes del turno tarde.
+                <br>• Las edades de 11 estudiantes del turno noche.
+                <br>Nota: Las edades de cada estudiante se deberán ingresar por la web.
+                <br>Lo que queremos devolver:
+                <br>• Obtener el promedio de las edades de cada turno (tres promedios).
+                <br>• Imprimir dichos promedios (promedio de cada turno).
+                <br>• Mostrar por pantalla un mensaje que indique cuál de los tres turnos tiene un promedio de edades mayor.</p>
+    
+                <div class="section active">
+                    <h4>Edades turno de mañana</h4>
+                    <div>
+                        <input type="number" id="morningAge1" class="form-control w-50"><br>
+                        <input type="number" id="morningAge2" class="form-control w-50"><br>
+                        <input type="number" id="morningAge3" class="form-control w-50"><br>
+                        <input type="number" id="morningAge4" class="form-control w-50"><br>
+                        <input type="number" id="morningAge5" class="form-control w-50"><br>
+                    </div>
+                    <button class="btn btn-dark" onclick="nextSection(1)">Siguiente &rarr;</button>
+                </div>
+            
+                <div class="section">
+                    <h4>Edades turno de tarde</h4>
+                    <div>
+                        <input type="number" id="afAge1" class="form-control w-50"><br>
+                        <input type="number" id="afAge2" class="form-control w-50"><br>
+                        <input type="number" id="afAge3" class="form-control w-50"><br>
+                        <input type="number" id="afAge4" class="form-control w-50"><br>
+                        <input type="number" id="afAge5" class="form-control w-50"><br>
+                        <input type="number" id="afAge6" class="form-control w-50"><br>
+                    </div>
+                    <button class="btn btn-dark" onclick="previousSection(0)">&larr; Anterior</button>
+                    <button class="btn btn-dark" onclick="nextSection(2)">Siguiente &rarr;</button>
+                </div>
+            
+                <div class="section">
+                    <h4>Edades turno de noche</h4>
+                    <div>
+                        <input type="number" id="nightAge1" class="form-control w-50"><br>
+                        <input type="number" id="nightAge2" class="form-control w-50"><br>
+                        <input type="number" id="nightAge3" class="form-control w-50"><br>
+                        <input type="number" id="nightAge4" class="form-control w-50"><br>
+                        <input type="number" id="nightAge5" class="form-control w-50"><br>
+                        <input type="number" id="nightAge6" class="form-control w-50"><br>
+                        <input type="number" id="nightAge7" class="form-control w-50"><br>
+                        <input type="number" id="nightAge8" class="form-control w-50"><br>
+                        <input type="number" id="nightAge9" class="form-control w-50"><br>
+                        <input type="number" id="nightAge10" class="form-control w-50"><br>
+                        <input type="number" id="nightAge11" class="form-control w-50"><br>
+                    </div>
+                    <button class="btn btn-dark" onclick="previousSection(1)">&larr; Anterior</button>
+                    <button class="btn btn-primary" onclick="calcularPromedios()">Calcular Promedios</button>
+                </div>
+
+                <div id="result10"></div>
+            
+        </section>
+        <footer>
+            <button id="back-to-top" class="btn btn-primary">↑ Subir</button>
+        </footer>
+
+        <!--  ≽^• ˕ • ྀི≼ cleolart.com - Claudia Lara ≽^• ˕ • ྀི≼ -->
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
